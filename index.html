@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"  />
+    <!-- displays site properly based on user's device -->
+
+    <!-- <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"> -->
+
+    <title>Frontend Mentor | Time tracking dashboard</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <!-- <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style> -->
+  </head>
+  <body>
+    <div class="dashbord">
+      <div class="profiles">
+        <div class="userInfos">
+          <div class="img">
+            <img width="50" src="assets/images/image-jeremy.png" alt="Jeremy" />
+          </div>
+          <div class="ReporterName">
+            <p>Report for</p>
+            <h2>Isidore OGOULODO</h2>
+          </div>
+        </div>
+        <div class="filters">
+          <ul>
+            <li class="option">Daily</li>
+            <li class="option">Weekly</li>
+            <li class="option">Monthly</li>
+          </ul>
+        </div>
+      </div>
+      <div class="details"></div>
+      <div class="addFormModal">
+        <div class="addform">
+          <div class="formHeader">
+            <h2>Add task to box</h2>
+            <img
+              src="assets/images/icon-close.svg"
+              class="close closeIcon"
+              alt="close"
+            />
+          </div>
+          <form action="">
+            <div class="error-name"></div>
+            <div class="name">
+              <label for="name">name : </label>
+              <input type="text" name="name" id="name" />
+            </div>
+            <div class="error-details"></div>
+            <div class="Taskdetails">
+              <label for="Taskdetails">Details : </label>
+              <textarea name="Taskdetails" id="Taskdetails"></textarea>
+            </div>
+            <div class="error-timeInmunite"></div>
+            <div class="StartTime">
+              <label for="StartTime"> Start at : </label>
+              <input type="number" min="0" max="23" name="startHours" id="startHours" />
+              <span> h</span>
+              <input type="number" min="0" max="60" name="startMunite" id="startMunite" />
+              <span>min</span>
+            </div>
+            <div class="endTime">
+              <label for="endTime"> finish at : </label>
+              <input type="number" min="0" max="23" name="endHours" id="endHours" />
+              <span> h</span>
+              <input type="number" min="0" max="60" name="endMunite" id="endMunite" />
+              <span>min</span>
+            </div>
+            <div class="buttons">
+              <button type="button" class="close">Cancel</button>
+              <button class="addbtn">Add to</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="detailsModal">
+        <div class="detailsBox">
+          <div class="dateDetails">Wed 22 app 2023</div>
+          <div class="tasks">
+            <div class="task">
+              <div class="calendar">
+                <img src="assets/images/icon-calendar.svg" alt="" />
+              </div>
+              <div class="taskDetails">
+                <h3>name</h3>
+                <p>details</p>
+                <p class="time">time</p>
+              </div>
+              <div class="actions">
+                <img
+                  src="assets/images/icon-edit.svg"
+                  class="edit"
+                  alt="edit"
+                />
+                <img
+                  src="assets/images/icon-delete.svg"
+                  class="delete"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="task">
+              <div class="calendar">
+                <img src="assets/images/icon-calendar.svg" alt="" />
+                <p class="date">21</p>
+                <p class="month">jun</p>
+                <p class="year">3003</p>
+              </div>
+              <div class="taskDetails">
+                <h3>name</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p class="time">10h - 13h</p>
+              </div>
+              <div class="actions">
+                <img
+                  src="assets/images/icon-edit.svg"
+                  class="edit"
+                  alt="edit"
+                />
+                <img
+                  src="assets/images/icon-delete.svg"
+                  class="delete"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="totalTime">
+            <p>Total Time</p>
+            <span> 12 h</span>
+          </div>
+          <img src="assets/images/icon-prev.svg" class="prev directionIcon" alt="">
+          <img src="assets/images/icon-next.svg" class="next directionIcon" alt="">
+          <img src="assets/images/icon-close.svg" class="directionIcon close" alt="">
+
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+    <script type="module" src="assets/js/main.js"></script>
+  </body>
+</html>

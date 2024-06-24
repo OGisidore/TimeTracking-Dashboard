@@ -1,0 +1,355 @@
+/* @import url(https://fonts.google.com/specimen/Rubik); */
+
+:root {
+  --Blue: hsl(246, 80%, 60%);
+  --Work: hsl(15, 100%, 70%);
+  --Play: hsl(195, 74%, 62%);
+  --Study: hsl(348, 100%, 68%);
+  --Exercice: hsl(145, 58%, 55%);
+  --Social: hsl(264, 64%, 52%);
+  --Self-Care: hsl(43, 84%, 65%);
+
+  ---bcg: hsl(226, 43%, 10%);
+  --BlueDarl: hsl(235, 46%, 20%);
+  --DesaturatedBlue: hsl(235, 45%, 61%);
+  --BluePale: hsl(236, 100%, 87%);
+  --Size: 18px;
+  /* --family: Rubik; */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  background: var(---bcg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+.dashbord {
+  display: flex;
+  width: 50rem;
+  flex-wrap: wrap;
+  padding: 1rem;
+  gap: 2rem;
+}
+.profiles {
+  width: 12rem;
+  background-color: var(--BlueDarl);
+  border-radius: 0.3rem;
+}
+
+.option.active {
+  color: #fff;
+}
+
+.userInfos {
+  padding: 1rem;
+  color: #fff;
+  height: 65%;
+  border-radius: 0.3rem;
+  background-color: var(--Blue);
+}
+.filters {
+  padding-top: 1rem;
+}
+
+.filters ul {
+  list-style: none;
+  margin: 0;
+}
+.filters ul li {
+  color: var(--DesaturatedBlue);
+  padding: 0.2rem 0;
+  cursor: pointer;
+}
+
+.details {
+  display: grid;
+  width: calc(100% - 15rem);
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 1.5rem;
+}
+.card-container {
+  background-color: var(--Work);
+  height: fit-content;
+  border-radius: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+.card-header .titles {
+  font-weight: bold;
+}
+.card-container > img {
+  height: 2rem;
+  margin-right: 2rem;
+  align-self: end;
+}
+.card-container .card-content {
+  position: relative;
+  background-color: var(--BlueDarl);
+  padding: 1rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+.cardMenu {
+  position: absolute;
+  right: 0;
+  display: none;
+}
+.icon {
+  padding: 0.4rem;
+}
+.cardMenu.active {
+  display: block;
+}
+.cardMenu div {
+  padding: 0.4rem;
+  border-top: 0.1rem solid #ccc;
+}
+.card-content:hover {
+  background-color: var(--Blue);
+}
+.card-content .current {
+  font-size: 2rem;
+  margin: 0.4rem 0 0 0;
+}
+.card-content .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.previous {
+  color: var(--BluePale);
+}
+
+.details .title {
+  font-size: var(--Size);
+  font-weight: 400;
+}
+.work {
+  background-color: var(--Work);
+}
+.play {
+  background-color: var(--Play);
+}
+.social {
+  background-color: var(--Social);
+}
+.study {
+  background-color: var(--Study);
+}
+.self-care {
+  background-color: var(--Self-Care);
+}
+.exercise {
+  background-color: var(--Exercice);
+}
+
+.addFormModal,
+.detailsModal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none !important;
+  width: 100vw;
+  height: 100vh;
+  /* z-index: 100; */
+  justify-content: center;
+  align-items: center;
+}
+.addFormModal.active, .detailsModal.active{
+  display: flex !important;
+  z-index: 100;
+}
+.addform,
+.detailsBox {
+  padding: 1rem;
+  width: 24rem;
+  background-color: #ccc;
+  border-radius: 0.3rem;
+  position: relative;
+}
+.detailsBox {
+  > div {
+    margin-top: 1rem;
+    padding: 1rem;
+  }
+  img{
+    width: 1.3rem;
+  }
+  .dateDetails {
+    text-align: center;
+  }
+  .tasks {
+    max-height: 15rem;
+    overflow: scroll;
+    .task {
+      display: flex;
+      padding: 1rem 0;
+      align-items: center;
+      justify-content: space-between;
+      .calendar{
+        p{
+          text-align: center;
+          margin: 0;
+        }
+      }
+      .taskDetails {
+        h3,
+        p {
+          text-align: center;
+          padding: .4rem;
+          margin: 0;
+        }
+        .time{
+          color: rgb(61, 29, 17);
+          font-weight: bold;
+        }
+      }
+      .actions{
+        display: flex;
+        cursor: pointer;
+        gap: 1rem;
+      }
+    }
+  }
+  .totalTime{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    p{
+      font-weight: bold;
+    }
+    span{
+      font-size: 20px
+    };
+  }
+  .directionIcon{
+    position: absolute;
+    cursor: pointer;
+   path{
+    height: 103px !important;
+    stroke: black;
+   }
+  }
+  .prev{
+    top: 50%;
+    left: -10%;
+  }
+  .next{
+    top: 50%;
+    right: -10%;
+  }
+ .close{
+  top: -10%;
+  right: -10%;
+
+ }
+}
+
+.addform .formHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.addform input {
+  padding: 0.8rem;
+  width: 95%;
+  border-radius: 0.2rem;
+  border: none;
+  outline: none;
+}
+.addform form {
+}
+.addform form div {
+  margin-top: 0.5rem;
+}
+.addform form textarea {
+  width: 98%;
+  min-height: 4rem;
+  outline: none;
+  border-radius: 0.3rem;
+  padding: 0.5rem;
+}
+.addform form .StartTime input,
+.endTime input {
+  padding: 0.5rem;
+  width: 2rem;
+}
+.addform .buttons {
+  display: flex;
+  gap: 2rem;
+  justify-content: end;
+}
+.addform button {
+  padding: 0.8rem;
+  border: none;
+}
+.addform button.close {
+  background: red;
+  color: #fff;
+  font-weight: bold;
+}
+.addform button {
+  background-color: green;
+  color: #fff;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 650px) and (min-width: 411px) {
+  .profiles {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+  }
+}
+@media screen and (max-width: 410px) {
+  .profiles {
+    width: 100%;
+    z-index: 10;
+    position: sticky;
+    top: 0;
+  }
+  .userInfos {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .detailsBox{
+     .close{
+    top: 10%;
+    right: 10%;
+  
+   }
+   .prev{
+    /* top: 50%; */
+    left: 10%;
+  }
+  .next{
+    /* top: 50%; */
+    right: 10%;
+  }
+  }
+  .card-body {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .filters {
+    padding: 0;
+  }
+  .filters ul {
+    margin: 0;
+    font-weight: 400;
+    display: flex;
+    justify-content: space-around;
+  }
+  .details {
+    width: 100%;
+  }
+}
