@@ -152,6 +152,7 @@ body {
 .addFormModal,
 .detailsModal {
   position: absolute;
+  background : rgba(0,0,0,0.5);
   top: 0;
   left: 0;
   display: none !important;
